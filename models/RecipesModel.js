@@ -1,4 +1,4 @@
-*import mongoose from "mongoose";
+import mongoose from "mongoose";
 import GeneralValidate from "../validators/GeneralValidate.js";
 
 const RecipesModel = mongoose.Schema({
