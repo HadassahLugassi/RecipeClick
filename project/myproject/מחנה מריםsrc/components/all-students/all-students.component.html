@@ -1,0 +1,21 @@
+<table class="table table-success ">
+    <thead>
+        <tr>
+            @for(x of arrKey; track $index){
+                <th>{{x}}</th>
+            }
+        </tr>
+    </thead>
+    <tbody>
+        @for(s of students; track $index){
+            <tr>
+                <td>{{s.name}}</td>
+                <td>{{s.id}}</td>
+                <td><img src="localhost:1111/student/getAllStudents//dilfin.JPG"></td>
+                <td> @for (entry of getSubjectEntries(s.marks); track $index) {
+                    <div>{{ entry[0]}}: {{ entry[1]}}</div>
+                }</td>
+            </tr>
+        }
+    </tbody>
+</table>

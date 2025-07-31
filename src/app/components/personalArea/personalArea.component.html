@@ -1,0 +1,19 @@
+
+<div class="cards">
+    <div class="row">
+        @for(recipe of recipecesArr;track $index){
+        <div class="col-auto">
+            <div class="container">
+                <div class="card">
+                    <img [src]="url + recipe.img" class="card-img-top" >
+                    <div class="card-body">
+                        <h5 class="card-title">{{recipe.name}}</h5>
+                        <p class="card-text">רמה: {{recipe.level}}</p>
+                        <div class="card-footer"><a [routerLink]="['/moreDetails',recipe._id]" class="btn btn-custom">פרטים נוספים</a></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        }
+    </div>
+</div>

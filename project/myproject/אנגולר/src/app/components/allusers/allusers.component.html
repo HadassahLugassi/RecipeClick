@@ -1,0 +1,24 @@
+<table class="table">
+    <thead>
+        <tr>
+            <th>תז</th>
+            <th>שם</th>
+            <th>קוד עיר</th>
+
+        </tr>
+    </thead>
+
+    @for( p of arr;track $index;let y=$index){
+    <tr>
+        <td>
+            {{p.tz}}
+        </td>
+        <td>
+            {{p.name}}
+        </td>
+        <td>
+            {{p.idcity}}
+        </td>
+    </tr>
+    }
+    </table>

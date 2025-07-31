@@ -1,0 +1,38 @@
+.card {
+    background-color: #545454; 
+    color: white;
+    width: 20vw;
+    margin: 20px; 
+}
+.row {
+    display: flex;
+    flex-wrap: wrap; 
+    direction: rtl; 
+    justify-content: space-between; 
+    padding-left: 11vw; 
+    padding-right: 11vw; 
+}
+.btn-custom {
+    background-color: orange; /* צבע רקע כתום */
+    color: black; /* צבע טקסט שחור */
+    border: 2px solid black; /* גבול שחור */
+    padding: 10px 20px; /* ריפוד פנימי */
+    text-align: center; /* ממרכז את הטקסט */
+    text-decoration: none; /* מסיר קו תחתון */
+    display: inline-block; /* מאפשר מרווחים סביב הכפתור */
+    border-radius: 5px; /* פינות מעוגלות */
+    transition: background-color 0.3s, color 0.3s; /* אפקט רך בעת שינוי */
+}
+
+.btn-custom:hover {
+    background-color: black; /* צבע רקע שחור בעת hover */
+    color: orange; /* צבע טקסט כתום בעת hover */
+}
+.card-footer {
+    display: flex; /* מפעיל Flexbox */
+    justify-content: center; /* ממרכז את הכפתור */
+    margin-top: auto; /* דוחף את ה-footer לתחתית הכרטיס */
+}
+.cards {
+    margin-top: 7vh; /* Adjust the value as needed */
+}
