@@ -1,0 +1,159 @@
+<div class="row" style="height: 100vh;">
+    <div class="col d-flex justify-content-center align-items-center">
+        <div class="card" dir="rtl">
+            <div class="card-body">
+                <h5 class="card-title text-center">טופס הוספת מתכון</h5>
+                @if(isUpdateRecipe==false){
+                <form>
+                    <div class="form-group">
+                        <label for="recipe-name">שם מתכון:</label>
+                        <input type="text" class="form-control" id="recipe-name" placeholder="הכנס שם מתכון"
+                            [(ngModel)]="recipe.name" name="recipe.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">תמונה:</label>
+                        <!-- <input type="file" class="form-control" id="image" placeholder="העלה תמונה"  [(ngModel)]="recipe.img" name="recipe.img"> -->
+
+                        <input type="text" class="form-control" id="image" placeholder="הכנס ניתוב תמונה תמונה"
+                            [(ngModel)]="recipe.img" name="recipe.img">
+                    </div>
+                    <div class="form-group">
+                        <label for="level">רמה:</label>
+                        <select class="form-control" id="level" [(ngModel)]="recipe.level" name="recipe.level">
+                            <option value="קל">קל</option>
+                            <option value="בינוני">בינוני</option>
+                            <option value="קשה">קשה</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">סוג מתכון:</label>
+                        <select class="form-control" id="type" [(ngModel)]="recipe.type" name="recipe.type">
+                            <option value="חלבי">חלבי</option>
+                            <option value="פרווה">פרווה</option>
+                            <option value="בשרי">בשרי</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prep-time">זמן הכנה:</label>
+                        <input type="number" class="form-control" id="prep-time" placeholder="הכנס זמן הכנה"
+                            [(ngModel)]="recipe.time" name="recipe.time">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-name">אופן ההכנה</label>
+                        <input type="text" class="form-control" id="recipe-prepering" placeholder="הכנס אופן הכנת המתכון"
+                            [(ngModel)]="recipe.prepering" name="recipe.prepering">
+                    </div>
+                    <div class="form-group">
+                        <label for="secret">רכיבי המתכון:</label>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>כמות</th>
+                                    <th>יחידת מידה ושם המוצר</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for(component of recipe.components ;track component; let i = $index){
+                                <tr>
+                                    <td>
+                                        <input type="number" class="form-control"
+                                            [(ngModel)]="recipe.components[i].quantity" name="recipe.components[i].quantity"
+                                            placeholder="הכנס כמות">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" [(ngModel)]="recipe.components[i].name"
+                                            name="recipe.components[i].name" placeholder="הכנס יחידת מידה ושם מוצר">
+                                    </td>
+                                </tr>
+                                }
+                                <button (click)="addComponent()" class="btn btn-custom">+</button>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-custom" (click)="addRecipe()">הוסף את המתכון</button>
+                    </div>
+                </form>
+            }
+            @else{
+                <form>
+                    <div class="form-group">
+                        <label for="recipe-name">שם מתכון:</label>
+                        <input type="text" class="form-control" id="recipe-name" placeholder="הכנס שם מתכון"
+                            [(ngModel)]="recipe2.name" name="recipe.name">
+                    </div>
+                    <div class="form-group">
+                        <label for="image">תמונה:</label>
+                        <!-- <input type="file" class="form-control" id="image" placeholder="העלה תמונה"  [(ngModel)]="recipe.img" name="recipe.img"> -->
+
+                        <input type="text" class="form-control" id="image" placeholder="הכנס ניתוב תמונה תמונה"
+                            [(ngModel)]="recipe2.img" name="recipe.img">
+                    </div>
+                    <div class="form-group">
+                        <label for="level">רמה:</label>
+                        <select class="form-control" id="level" [(ngModel)]="recipe2.level" name="recipe.level">
+                            <option value="קל">קל</option>
+                            <option value="בינוני">בינוני</option>
+                            <option value="קשה">קשה</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="type">סוג מתכון:</label>
+                        <select class="form-control" id="type" [(ngModel)]="recipe2.type" name="recipe.type">
+                            <option value="חלבי">חלבי</option>
+                            <option value="פרווה">פרווה</option>
+                            <option value="בשרי">בשרי</option>
+                        </select>
+                    </div>
+                    <div class="form-group">
+                        <label for="prep-time">זמן הכנה:</label>
+                        <input type="number" class="form-control" id="prep-time" placeholder="הכנס זמן הכנה"
+                            [(ngModel)]="recipe2.time" name="recipe.time">
+                    </div>
+                    <div class="form-group">
+                        <label for="recipe-name">אופן ההכנה</label>
+                        <input type="text" class="form-control" id="recipe-prepering" placeholder="הכנס אופן הכנת המתכון"
+                            [(ngModel)]="recipe2.prepering" name="recipe.prepering">
+                    </div>
+                    <div class="form-group">
+                        <label for="secret">רכיבי המתכון:</label>
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th>כמות</th>
+                                    <th>יחידת מידה ושם המוצר</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                @for(component of recipe2.components ;track component; let i = $index){
+                                <tr>
+                                    <td>
+                                        <input type="number" class="form-control"
+                                            [(ngModel)]="recipe2.components[i].quantity" name="recipe2.components[i].quantity"
+                                            placeholder="הכנס כמות">
+                                    </td>
+                                    <td>
+                                        <input type="text" class="form-control" [(ngModel)]="recipe2.components[i].name"
+                                            name="recipe2.components[i].name" placeholder="הכנס יחידת מידה ושם מוצר">
+                                    </td>
+                                </tr>
+                                }
+                                <button (click)="addComponent()" class="btn btn-custom">+</button>
+                            </tbody>
+                        </table>
+
+
+
+                    </div>
+                    <div class="text-center mt-3">
+                        <button class="btn btn-custom" (click)="updateRecipe()">ערוך את המתכון</button>
+                    </div>
+                </form>
+            }
+            </div>
+        </div>
+    </div>
+</div>

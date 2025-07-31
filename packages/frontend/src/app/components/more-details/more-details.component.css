@@ -1,0 +1,31 @@
+.recipe-card {
+    border: 2px solid rgb(50, 50, 50); /* Black border around the card */
+    border-radius: 10px; /* Optional: rounded corners */
+    background-color: white; /* Background color of the card */
+  
+}
+.recipe-container{
+    padding-left: 11vw; 
+    padding-right: 11vw; 
+}
+
+.card-title, .card-text, .btn-warning {
+    color:  orange; /* Uniform orange color */
+}
+
+.btn-custom {
+    background-color:  orange; /* צבע רקע כתום */
+    color: black; /* צבע טקסט שחור */
+    border: 2px solid black; /* גבול שחור */
+    padding: 10px 20px; /* ריפוד פנימי */
+    text-align: center; /* ממרכז את הטקסט */
+    text-decoration: none; /* מסיר קו תחתון */
+    display: inline-block; /* מאפשר מרווחים סביב הכפתור */
+    border-radius: 5px; /* פינות מעוגלות */
+    transition: background-color 0.3s, color 0.3s; /* אפקט רך בעת שינוי */
+}
+
+.btn-custom:hover {
+    background-color: black; /* צבע רקע שחור בעת hover */
+    color: orange; /* צבע טקסט כתום בעת hover */
+}

@@ -1,0 +1,54 @@
+<!-- <div class="container mt-3">
+    <form>
+      <div class="row">
+        <div class="col">
+          <input type="text" class="form-control" placeholder="Enter name" name="email">
+           [(ngModel)]="userName">
+        </div>
+        <div class="col">
+          <input type="password" class="form-control" placeholder="Enter password" name="pswd" >
+          [(ngModel)]="userPass">
+        </div>
+      </div>
+  
+    </form>
+  
+    <form >
+      <div class="row">
+        <div class="col">
+          <button (click)="checkUser()" class="btn btn-secondary form-control ">התחברות</button>
+        </div>
+      </div>
+    </form>
+  </div> -->
+
+  <div class="row" style="height: 100vh;">
+    <div class="col d-flex justify-content-center align-items-center">
+        <div class="card" dir="rtl">
+            <div class="card-body">
+                <h5 class="card-title text-center">טופס הרשמה</h5>
+                <form>
+                    <div class="form-group">
+                        <label for="name">שם:</label>
+                        <input type="text" class="form-control" id="name" placeholder="הכנס שם" [(ngModel)]="user.name" name="name">
+                    </div>
+                    <div class="form-group">
+                        <label for="password">סיסמא:</label>
+                        <input type="password" class="form-control" id="password" placeholder="הכנס סיסמא" [(ngModel)]="user.password" name="pass">
+                    </div>
+                    <div class="form-group">
+                        <label for="address">כתובת:</label>
+                        <input type="text" class="form-control" id="address" placeholder="הכנס כתובת" [(ngModel)]="user.address" name="address">
+                    </div>
+                    <div class="form-group">
+                        <label for="phone">מספר טלפון:</label>
+                        <input type="tel" class="form-control" id="phone" placeholder="הכנס מספר טלפון" [(ngModel)]="user.phone" name="phone">
+                    </div>
+                    <div class="text-center mt-3">
+                        <button (click)="addUser()" class="btn btn-custom">שלח</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>

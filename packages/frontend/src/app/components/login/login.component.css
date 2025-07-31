@@ -1,0 +1,23 @@
+.card {
+    background-color: #ffffff; 
+    color: black;
+    width: 20vw;
+    border: 1px solid black; /* עדינה שחורה */
+}
+
+.btn-custom {
+    background-color: orange; /* צבע רקע כתום */
+    color: black; /* צבע טקסט שחור */
+    border: 2px solid black; /* גבול שחור */
+    padding: 10px 20px; /* ריפוד פנימי */
+    text-align: center; /* ממרכז את הטקסט */
+    text-decoration: none; /* מסיר קו תחתון */
+    display: inline-block; /* מאפשר מרווחים סביב הכפתור */
+    border-radius: 5px; /* פינות מעוגלות */
+    transition: background-color 0.3s, color 0.3s; /* אפקט רך בעת שינוי */
+}
+
+.btn-custom:hover {
+    background-color: black; /* צבע רקע שחור בעת hover */
+    color: orange; /* צבע טקסט כתום בעת hover */
+}

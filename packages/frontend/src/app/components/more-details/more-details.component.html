@@ -1,0 +1,32 @@
+<div class="recipe-container" dir="rtl">
+    <div class="row align-items-center mx-5 mt-5 p-4 recipe-card">
+        <div class="col-md-6">
+            <img [src]="url + recipe.img" class="img-fluid rounded" alt="Recipe Image">
+        </div>
+        <div class="col-md-6">
+            <h5 class="card-title text-warning">{{recipe.name}}</h5>
+            <p class="card-text"><i class="fas fa-star text-warning"></i> <strong>רמה:</strong> {{recipe.level}}</p>
+            <p class="card-text"><i class="fas fa-clock text-warning"></i> <strong>זמן הכנה:</strong> {{recipe.time}}
+                דקות</p>
+            <p class="card-text"><i class="fas fa-tag text-warning"></i> <strong>סוג: </strong>{{recipe.type}}</p>
+            <h6 class="text-warning">מרכיבים:</h6>
+            <ul>
+                @for(component of recipe.components; track $index){
+                <li><i class="fas fa-check text-warning"></i>{{component.quantity}} {{component.name}} </li>
+                }
+            </ul>
+            <p class="card-text"><i class="fas fa-star text-warning"></i> <strong>אופן ההכנה:</strong> {{recipe.prepering}}</p>
+            <div class="mt-4">
+                <button (click)="deleteRecipe()" class="btn btn-custom">מחק</button>
+                <button (click)="addfavoriteRecipe()" class="btn btn-custom">הוסף לרשימת המתכונים האהובים</button>
+                <button (click)="updateRecipe()" class="btn btn-custom">ערוך</button>
+            </div>
+ 
+        </div>
+        <div class="mt-4">
+            <button (click)="goBack()" class="btn btn-custom">לחזרה</button>
+        </div>
+       
+    </div>
+ 
+</div>
